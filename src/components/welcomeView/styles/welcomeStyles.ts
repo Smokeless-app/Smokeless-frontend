@@ -19,4 +19,11 @@ export const welcomeStyles = StyleSheet.create({
     width: 200,
     justifyContent: "space-around",
   },
+  btn: {
+    fontSize: 16,
+    padding: 10,
+    backgroundColor: "#f2f2f2",
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
 });
