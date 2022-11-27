@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Button } from "react-native";
 import Btn from "../reuseable/Btn";
 import { welcomeStyles } from "./styles/welcomeStyles";
 export default function LogIn(props: { handleLogIn: (data) => void }) {

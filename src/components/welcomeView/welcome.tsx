@@ -4,6 +4,7 @@ import LogIn from "./LogIn";
 import Register from "./Register";
 import OpeningChoice from "./OpeningChoice";
 import { welcomeStyles } from "./styles/welcomeStyles";
+
 export default function Welcome() {
   const [hasAcc, setHasAcc] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -19,7 +20,11 @@ export default function Welcome() {
   function handleLogIn(data: { emal: string; passwd: string }): void {
     console.log(data);
   }
-  function handleRegister(data: { emal: string; passwd: string }): void {
+  function handleRegister(data: {
+    emal: string;
+    passwd: string;
+    passwd2: string;
+  }): void {
     console.log(data);
   }
   return (

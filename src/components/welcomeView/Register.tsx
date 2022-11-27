@@ -7,7 +7,7 @@ export default function Register(props: { handleRegister: (data) => void }) {
   const [passwd, setPasswd] = useState("");
   const [passwd2, setPasswd2] = useState("");
   function handleReg() {
-    const data = { email: email, passwd: passwd };
+    const data = { email: email, passwd: passwd, passwd2: passwd2 };
     props.handleRegister(data);
   }
   return (
