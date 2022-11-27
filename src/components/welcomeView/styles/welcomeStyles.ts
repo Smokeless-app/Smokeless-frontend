@@ -26,4 +26,21 @@ export const welcomeStyles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 10,
   },
+  input: {
+    padding: 7,
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    width: 200,
+    margin: 10,
+    marginTop: 0,
+  },
+  submitBtn: {
+    fontSize: 16,
+    padding: 10,
+    backgroundColor: "#f2f2f2",
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    minWidth: 80,
+    maxWidth: 100,
+  },
 });
