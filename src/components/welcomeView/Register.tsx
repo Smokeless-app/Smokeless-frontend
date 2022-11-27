@@ -1,13 +1,23 @@
 import { View, Text, TextInput } from "react-native";
 import { welcomeStyles } from "./styles/welcomeStyles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Btn from "../reuseable/Btn";
 export default function Register(props: { handleRegister: (data) => void }) {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [passwd, setPasswd] = useState("");
   const [passwd2, setPasswd2] = useState("");
+  useEffect(() => {
+    if (passwd.length < 8)
+      setMessage("Password must be at least 8 characters long");
+    else {
+      if (passwd !== passwd2) setMessage("Passwords does not match!");
+      else setMessage(" ");
+    }
+  }, [passwd, passwd2]);
+
   function handleReg() {
-    const data = { email: email, passwd: passwd, passwd2: passwd2 };
+    const data = { email: email, passwd: passwd };
     props.handleRegister(data);
   }
   return (
@@ -28,13 +38,16 @@ export default function Register(props: { handleRegister: (data) => void }) {
           placeholder="Repeat password"
           secureTextEntry={true}
           style={welcomeStyles.input}
-          onChangeText={(text) => setPasswd2(text)}
+          onChangeText={(text) => {
+            setPasswd2(text);
+          }}
         ></TextInput>
         <Btn
           text={"Register"}
           on={handleReg}
           style={welcomeStyles.submitBtn}
         ></Btn>
+        <Text style={{ color: "#FF0000" }}>{message}</Text>
       </View>
     </View>
   );

@@ -20,11 +20,7 @@ export default function Welcome() {
   function handleLogIn(data: { emal: string; passwd: string }): void {
     console.log(data);
   }
-  function handleRegister(data: {
-    emal: string;
-    passwd: string;
-    passwd2: string;
-  }): void {
+  function handleRegister(data: { emal: string; passwd: string }): void {
     console.log(data);
   }
   return (
